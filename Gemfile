@@ -1,4 +1,3 @@
-source :gemcutter
+source 'https://rubygems.org'
 
 gem 'rspec'
-
