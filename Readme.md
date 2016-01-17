@@ -1,6 +1,6 @@
 # Conway's Game of Life
 
-Ruby implementation of [Conway's Game of Life](http://en.wikipedia.org/wiki/Conway%27s_Game_of_Life). ASCII input and output, tested with RSpec.
+Ruby implementation of [Conway's Game of Life](http://en.wikipedia.org/wiki/Conway%27s_Game_of_Life). ASCII input and output, tested with minitest.
 
 Includes *Gosper Gun* seed pattern.
 
