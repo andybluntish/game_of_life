@@ -37,6 +37,9 @@ if options[:file]
 else
   # Read DATA from end of file into a Hash (Sinatra inline-template style with '@@' for titles)
   patterns = DATA.read.split(/^@@\s*(.*\S)\s*$/).map(&:strip).delete_if { |d| d == '' }
+
+  # Splat (*) operator expands array into arguments: key, value, ...
+  # creates a hash with alternate array members as key and value
   patterns = Hash[*patterns]
   pattern = patterns[options[:pattern]]
 end
