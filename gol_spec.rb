@@ -4,7 +4,6 @@ require 'rubygems'
 require 'rspec'
 require './gol'
 
-
 describe "Game of Life" do
   let(:grid) do
     seed = <<-EOS
@@ -46,7 +45,6 @@ EOS
     end
   end
 
-
   context "Cell" do
     subject { grid.cell_at(1, 2) }
     before(:each) { subject.live! }
@@ -80,9 +78,7 @@ EOS
     end
   end
 
-
   context "Rules" do
-
     context "1: Any live cell with fewer than two live neighbours dies, as if caused by under-population" do
       it "dies with no neighbours" do
         grid = Grid.new(<<-EOS
@@ -161,7 +157,5 @@ EOS
         grid.cell_at(2, 1).should be_dead
       end
     end
-
   end
 end
-

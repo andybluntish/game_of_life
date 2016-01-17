@@ -4,7 +4,7 @@ require 'optparse'
 require './gol'
 
 # Default options
-options = {pattern: 'gosper_gun', ticks: 100}
+options = { pattern: 'gosper_gun', ticks: 100 }
 
 opt_parser = OptionParser.new do |opt|
   opt.banner = "Usage: game_of_life [OPTIONS]"
@@ -31,13 +31,12 @@ end
 
 opt_parser.parse!
 
-
 # Load pattern file, or fallback to inline
 if options[:file]
   pattern = IO.read(options[:file])
 else
   # Read DATA from end of file into a Hash (Sinatra inline-template style with '@@' for titles)
-  patterns = DATA.read.split(/^@@\s*(.*\S)\s*$/).map(&:strip).delete_if{ |d| d == '' }
+  patterns = DATA.read.split(/^@@\s*(.*\S)\s*$/).map(&:strip).delete_if { |d| d == '' }
   patterns = Hash[*patterns]
   pattern = patterns[options[:pattern]]
 end
@@ -49,7 +48,7 @@ if pattern
 
   0.upto(ticks) do |i|
     system('clear')
-    puts grid.inspect
+    puts grid.to_s
     puts "Iteration: #{i}"
     sleep 0.05
     grid.tick!
@@ -57,8 +56,6 @@ if pattern
 else
   raise "Not a valid pattern!"
 end
-
-
 
 __END__
 

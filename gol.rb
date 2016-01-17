@@ -18,12 +18,10 @@ class Grid
     end
   end
 
-
   # Find a Cell
   def cell_at(x, y)
     @cells[y][x]
   end
-
 
   # Find neighbouring Cells
   def neighbours(x, y)
@@ -41,7 +39,6 @@ class Grid
     neighbours
   end
 
-
   # Cause cells to change state
   def tick!
     to_die = []
@@ -51,7 +48,7 @@ class Grid
       row.each do |cell|
 
         # Add up the number of 'alive' neighbouring cells
-        live_neighbour_count = neighbours(cell.x, cell.y).select{ |n| n.alive? }.count
+        live_neighbour_count = neighbours(cell.x, cell.y).select { |n| n.alive? }.count
 
         if cell.alive? and (live_neighbour_count < 2 || live_neighbour_count > 3)
           to_die << cell
@@ -69,7 +66,6 @@ class Grid
     @cells.map { |row| row.join }.join("\n")
   end
 end
-
 
 class Cell
   attr_accessor :x, :y
@@ -100,4 +96,3 @@ class Cell
     alive? ? 'X' : '.'
   end
 end
-
