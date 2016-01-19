@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 require 'optparse'
-require './gol'
+require './lib/gol'
 
 # Default options
 options = { pattern: 'gosper_gun', ticks: 100 }

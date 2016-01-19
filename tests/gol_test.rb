@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 require 'minitest/autorun'
-require './gol'
+require './lib/gol'
 
 describe "Game of Life" do
   before do
