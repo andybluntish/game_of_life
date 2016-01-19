@@ -4,4 +4,24 @@ Ruby implementation of [Conway's Game of Life](http://en.wikipedia.org/wiki/Conw
 
 Includes *Gosper Gun* seed pattern.
 
-Run `ruby game_of_life.rb -h` for usage.
+## Running
+
+Run the default Gosper Gun seed pattern:
+
+```
+rake
+```
+
+For more advanced usage, run the `game_of_life.rb` file directly.
+
+## Help
+
+```
+ruby game_of_life.rb -h
+```
+
+## Tests
+
+```
+rake test
+```
